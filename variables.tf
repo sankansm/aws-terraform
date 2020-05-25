@@ -13,8 +13,4 @@ variable "s3_tags"{
     }
 }
 
-variable "s3_regions"{
-    type = "list"
-    default = ["us-east-1", "us-west-2"]
 
-}
