@@ -1,16 +1,28 @@
-variable "bucket_name"{
- #   default = "terraform-buket-2384"
-    description= "this is s3 bucket created"
-    type = "string"
+variable "environment" {
+  type    = "string"
+  default = "test"
 }
 
-variable "s3_tags"{
-    type = "map"
+variable "bucket_prefix" {
 
-    default = {
-        created_by = "terraform"
-        environment = "test"
-    }
+  description = "this is s3 bucket created"
+  type        = "string"
 }
+
+variable "region" {
+
+}
+
+
+locals {
+
+  s3_tags = {
+
+    created_by  = "terraform"
+    environment = "${var.environment}"
+  }
+
+}
+
 
 
